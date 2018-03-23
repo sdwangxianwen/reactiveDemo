@@ -15,7 +15,8 @@
 		1E06D74E2064974A00CA8E1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E06D74D2064974A00CA8E1F /* main.m */; };
 		1E06D7582064974A00CA8E1F /* reactiveDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E06D7572064974A00CA8E1F /* reactiveDemoTests.m */; };
 		1E06D7632064974A00CA8E1F /* reactiveDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E06D7622064974A00CA8E1F /* reactiveDemoUITests.m */; };
-		1E06D77D2064999500CA8E1F /* RQObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E06D77C2064999500CA8E1F /* RQObject.m */; };
+		1E06D78E2064A36D00CA8E1F /* RQTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E06D78D2064A36D00CA8E1F /* RQTableViewModel.m */; };
+		1E06D7912064A56000CA8E1F /* RQViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E06D7902064A56000CA8E1F /* RQViewModel.m */; };
 		AD194B1E570D901E5D91DF1F /* libPods-reactiveDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D68E7E615DCA2DAB603580 /* libPods-reactiveDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +54,11 @@
 		1E06D75E2064974A00CA8E1F /* reactiveDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reactiveDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E06D7622064974A00CA8E1F /* reactiveDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reactiveDemoUITests.m; sourceTree = "<group>"; };
 		1E06D7642064974A00CA8E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1E06D77B2064999500CA8E1F /* RQObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RQObject.h; sourceTree = "<group>"; };
-		1E06D77C2064999500CA8E1F /* RQObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RQObject.m; sourceTree = "<group>"; };
+		1E06D77E20649B1C00CA8E1F /* ReactiveDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveDemo.pch; sourceTree = "<group>"; };
+		1E06D78C2064A36D00CA8E1F /* RQTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RQTableViewModel.h; sourceTree = "<group>"; };
+		1E06D78D2064A36D00CA8E1F /* RQTableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RQTableViewModel.m; sourceTree = "<group>"; };
+		1E06D78F2064A56000CA8E1F /* RQViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RQViewModel.h; sourceTree = "<group>"; };
+		1E06D7902064A56000CA8E1F /* RQViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RQViewModel.m; sourceTree = "<group>"; };
 		7693CE601CAFB20C0A226232 /* Pods-reactiveDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactiveDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reactiveDemo/Pods-reactiveDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D309B676CBC76072D7A439F6 /* Pods-reactiveDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactiveDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-reactiveDemo/Pods-reactiveDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D3D68E7E615DCA2DAB603580 /* libPods-reactiveDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactiveDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +132,7 @@
 				1E06D7492064974A00CA8E1F /* LaunchScreen.storyboard */,
 				1E06D74C2064974A00CA8E1F /* Info.plist */,
 				1E06D74D2064974A00CA8E1F /* main.m */,
+				1E06D77E20649B1C00CA8E1F /* ReactiveDemo.pch */,
 			);
 			path = reactiveDemo;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 		1E06D7702064983A00CA8E1F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1E06D78B2064A35400CA8E1F /* Baseclass */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -160,7 +166,6 @@
 		1E06D7722064984D00CA8E1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1E06D77A2064997200CA8E1F /* baseclass */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,13 +212,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		1E06D77A2064997200CA8E1F /* baseclass */ = {
+		1E06D78B2064A35400CA8E1F /* Baseclass */ = {
 			isa = PBXGroup;
 			children = (
-				1E06D77B2064999500CA8E1F /* RQObject.h */,
-				1E06D77C2064999500CA8E1F /* RQObject.m */,
+				1E06D78C2064A36D00CA8E1F /* RQTableViewModel.h */,
+				1E06D78D2064A36D00CA8E1F /* RQTableViewModel.m */,
+				1E06D78F2064A56000CA8E1F /* RQViewModel.h */,
+				1E06D7902064A56000CA8E1F /* RQViewModel.m */,
 			);
-			path = baseclass;
+			path = Baseclass;
 			sourceTree = "<group>";
 		};
 		225DC74FDD295A31DC45C00C /* Pods */ = {
@@ -423,10 +430,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E06D78E2064A36D00CA8E1F /* RQTableViewModel.m in Sources */,
 				1E06D7432064974A00CA8E1F /* ViewController.m in Sources */,
 				1E06D74E2064974A00CA8E1F /* main.m in Sources */,
+				1E06D7912064A56000CA8E1F /* RQViewModel.m in Sources */,
 				1E06D7402064974A00CA8E1F /* AppDelegate.m in Sources */,
-				1E06D77D2064999500CA8E1F /* RQObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = reactiveDemo/ReactiveDemo.pch;
 				INFOPLIST_FILE = reactiveDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-2.reactiveDemo";
@@ -605,6 +614,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = reactiveDemo/ReactiveDemo.pch;
 				INFOPLIST_FILE = reactiveDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-2.reactiveDemo";
