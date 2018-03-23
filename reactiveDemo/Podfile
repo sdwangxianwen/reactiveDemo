@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+
+target 'reactiveDemo' do
+
+pod 'Masonry' 
+# 字典转模型
+pod 'YYModel' 
+pod 'MJRefresh' 
+pod 'MBProgressHUD' 
+pod 'ReactiveObjC'
+pod 'PPNetworkHelper'
+
+
+end
